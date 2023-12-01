@@ -1,0 +1,31 @@
+{
+    "name": "advent-of-code-2024",
+    "version": "1.0.0",
+    "description": "Advent of Code",
+    "main": "app.js",
+    "scripts": {
+        "build": "npx tsc --project ./",
+        "setup": "node setup.js",
+        "test1": "npm run build && node dist/src/test1",
+        "solve1": "npm run build && node dist/src/solve1",
+        "test2": "npm run build && node dist/src/test2",
+        "solve2": "npm run build && node dist/src/solve2",
+        "start": "npm run solve",
+        "lint": "eslint . --ext .ts",
+        "typescript": "tsc",
+        "new": "node ./new.js"
+    },
+    "author": "Doenja Maris",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^14.17.34",
+        "@typescript-eslint/eslint-plugin": "^5.5.0",
+        "@typescript-eslint/parser": "^5.5.0",
+        "eslint": "^8.3.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "prettier": "^2.5.0",
+        "prompt-sync": "^4.2.0",
+        "typescript": "^4.5.2"
+    }
+}
