@@ -1,8 +1,8 @@
 
-    import { part1 } from "./dec1/part1";
+    import { part1 } from "./dec2/part1";
     
-    const expected = 0;
-    const output = part1("input/dec1-test1.txt");
+    const expected = 8;
+    const output = part1("input/dec2-test1.txt");
     
     if (output === expected) {
         console.log("Test for part 1 is a success!");

@@ -14,7 +14,7 @@ function boilerPlate(part) {
         const input = getInput(file);
         console.log(input);
         return 0;
-    }`
+    }`;
 }
 
 function solveBoilerPlate(part) {
@@ -22,7 +22,7 @@ function solveBoilerPlate(part) {
     
     const output = part${part}("input/${day}.txt");
     console.log('The answer to part ${part} is ' + output);
-    `
+    `;
 }
 
 function testBoilerPlate(part) {
@@ -40,18 +40,18 @@ function testBoilerPlate(part) {
         console.log("Expected: " + expected + ", Output: " + output);
         console.groupEnd();
     }
-    `
+    `;
 }
 
-if(fs.existsSync('./src/' + day)) {
+if (fs.existsSync("./src/" + day)) {
     console.log(day + " already exists!");
 } else {
     fs.mkdirSync("./src/" + day);
     fs.writeFileSync(`./src/${day}/part1.ts`, boilerPlate(1));
     fs.writeFileSync(`./src/${day}/part2.ts`, boilerPlate(2));
-    fs.writeFileSync(`./input/${day}-test1.txt`);
-    fs.writeFileSync(`./input/${day}-test2.txt`);
-    fs.writeFileSync(`./input/${day}.txt`);
+    fs.writeFileSync(`./input/${day}-test1.txt`, "");
+    fs.writeFileSync(`./input/${day}-test2.txt`, "");
+    fs.writeFileSync(`./input/${day}.txt`, "");
     fs.writeFileSync(`./src/solve1.ts`, solveBoilerPlate(1));
     fs.writeFileSync(`./src/solve2.ts`, solveBoilerPlate(2));
     fs.writeFileSync(`./src/test1.ts`, testBoilerPlate(1));
