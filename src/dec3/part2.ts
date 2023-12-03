@@ -11,9 +11,28 @@ export function part2(file: string) {
 
     input.forEach((row, rowIndex) => {
         const starRegex = /[*]+/g;
-        let starMatch;
+        let starMatch: any;
+        const nrRegex = /[0-9]+/g;
+        let nrMatch;
         while ((starMatch = starRegex.exec(row)) !== null) {
-            console.log(row, rowIndex, starMatch);
+            const numbersAroundGears: number[] = [];
+            [rowIndex - 1, rowIndex, rowIndex + 1].forEach((starRow) => {
+                while ((nrMatch = nrRegex.exec(input[starRow]))) {
+                    if (
+                        nrMatch.index > starMatch.index + 1 ||
+                        nrMatch.index + nrMatch[0].length <= starMatch.index - 1
+                    ) {
+                        continue;
+                    } else {
+                        numbersAroundGears.push(parseInt(nrMatch[0]));
+                    }
+                }
+            });
+            if (numbersAroundGears.length > 1) {
+                let total = 1;
+                numbersAroundGears.forEach((nr) => (total = total * nr));
+                sum += total;
+            }
         }
     });
 
