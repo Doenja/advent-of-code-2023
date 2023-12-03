@@ -9,11 +9,11 @@ export function part2(file: string) {
     const input = getInput(file);
     let sum = 0;
 
-    input.forEach((line, i) => {
+    input.forEach((line) => {
         const counter: { [key: string]: number } = {
-            red: 0,
-            green: 0,
-            blue: 0,
+            red: 1,
+            green: 1,
+            blue: 1,
         };
 
         Object.keys(counter).forEach((key) => {
