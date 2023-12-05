@@ -1,7 +1,7 @@
-import { part1 } from "./dec3/part1";
+import { part1 } from "./dec5/part1";
 
-const expected = 4361;
-const output = part1("input/dec3-test1.txt");
+const expected = 35;
+const output = part1("input/dec5-test1.txt");
 
 if (output === expected) {
     console.log("Test for part 1 is a success!");
